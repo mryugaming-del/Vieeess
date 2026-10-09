@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Dashboard</title>
+  <!-- Menghubungkan style.css di folder yang sama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Top Bar: Custom Name & Theme Toggle -->
+    <header class="top-bar">
+      <div class="name-container">
+        <label for="name-input">Your Name:</label>
+        <input type="text" id="name-input" placeholder="Enter your name...">
+      </div>
+      <button id="theme-toggle-btn" class="btn secondary">Toggle Dark Mode</button>
+    </header>
+
+    <!-- Header Section: Time & Greeting -->
+    <section class="card greeting-card">
+      <h1 id="clock-time">10:45:22</h1>
+      <p id="clock-date">Tuesday, January 27, 2026</p>
+      <h2 id="greeting-text">Good Morning</h2>
+    </section>
+
+    <!-- Main Grid -->
+    <main class="dashboard-grid">
+      
+      <!-- Focus Timer -->
+      <section class="card focus-timer-card">
+        <h3>Focus Timer</h3>
+        
+        <div class="timer-settings">
+          <label for="pomodoro-minutes">Minutes:</label>
+          <input type="number" id="pomodoro-minutes" value="25" min="1" max="120">
+          <button id="set-timer-btn" class="btn primary">Set</button>
+        </div>
+
+        <div class="timer-display" id="timer-display">25:00</div>
+        
+        <div class="timer-controls">
+          <button id="start-timer-btn" class="btn primary">Start</button>
+          <button id="stop-timer-btn" class="btn primary">Stop</button>
+          <button id="reset-timer-btn" class="btn primary">Reset</button>
+        </div>
+      </section>
+
+      <!-- Tasks / To-Do List -->
+      <section class="card todo-card">
+        <h3>Tasks</h3>
+        
+        <form id="todo-form" class="input-group">
+          <input type="text" id="todo-input" placeholder="Add a new task..." required>
+          <button type="submit" class="btn primary">Add</button>
+        </form>
+
+        <div class="sort-container">
+          <label for="sort-select">Sort by:</label>
+          <select id="sort-select">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="alphabetical">Alphabetical</option>
+            <option value="status">Status (Pending First)</option>
+          </select>
+        </div>
+
+        <ul id="todo-list" class="todo-list"></ul>
+      </section>
+
+      <!-- Quick Links -->
+      <section class="card links-card">
+        <h3>Quick Links</h3>
+        
+        <form id="link-form" class="input-group-triple">
+          <input type="text" id="link-name-input" placeholder="Link name" required>
+          <input type="url" id="link-url-input" placeholder="https://..." required>
+          <button type="submit" class="btn primary">Add Link</button>
+        </form>
+
+        <div id="links-container" class="links-container"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Menghubungkan script.js di folder yang sama -->
+  <script src="script.js"></script>
+</body>
+</html>
